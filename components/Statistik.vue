@@ -20,9 +20,15 @@ const labels = [
     labels: labels,
     datasets: [{
       label: 'Pengunjung',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
       data: [30, 40, 50, 40, 20, 50],
+      backgroundColor: [
+      'rgba(243, 119,	119, 0.99)',
+      'rgba(176, 76, 76, 0.50)',
+      'rgba(255, 155, 155, 0.90)',
+      'rgba(142, 72, 72, 0.90)',
+      'rgba(142, 72, 72, 0.90)',
+      'rgba(255, 169, 169, 0.90)'
+    ],
     }]
   };
 

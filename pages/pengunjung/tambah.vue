@@ -104,7 +104,7 @@ onMounted(() => {
   background-color: #ffd0d0f2;
 }
 .Keanggotaan{
-  background-color: rgba(181, 74, 74, 0.761)
+  background-color: rgba(181, 74, 74, 0.761);
 }
 .tingkat{
   background-color: #ffd0d0f2;
