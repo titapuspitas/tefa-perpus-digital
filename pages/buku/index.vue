@@ -1,10 +1,16 @@
 import { NuxtLink } from '#build/components';
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-5">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-12 -flex justify-content-around">
         <div class="my-5">
-          <input type="search" class="form-control rounded-5" placeholder="Mau baca apa hari ini?">
+          <form @submit.prevent="getBuku">
+            <input 
+            v-model="keyword" 
+            type="search" 
+            class="form-control rounded-5" 
+            placeholder="Mau baca apa hari ini?">
+          </form>
         </div>
         <div class="my-4 text-muted">menampilkan 30 dari 30</div>
         <div class="row justify-content-evenly">
@@ -41,7 +47,7 @@ const getBuku = async () => {
 
 onMounted(() => {
   getBuku()
-})
+});
 
 const keyword = ref("");
 </script>
