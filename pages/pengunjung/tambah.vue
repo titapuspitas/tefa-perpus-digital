@@ -94,8 +94,6 @@ onMounted(() => {
 })
 </script>
 
-<form @submit.prevent="kirimData">
-</form>
 <style scoped>
 .btn{
   background-color: #ffd0d0f2;

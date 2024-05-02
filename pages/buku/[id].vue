@@ -16,6 +16,9 @@
       </ul>
     </div>
   </div>
+  <NuxtLink to="/buku">
+    <button type="submit" class="btn btn-lg rounded-5 px-5">Kembali</button>
+  </NuxtLink>
 </div>
 </template>
 
@@ -34,3 +37,12 @@ onMounted(() => {
   getBukuById()
 })
 </script>
+
+<style scoped>
+.btn{
+  background-color: #ffd0d0f2;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+</style>

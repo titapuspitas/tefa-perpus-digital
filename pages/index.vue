@@ -25,13 +25,14 @@
     </div>
       <div class="row my-5 d-flex justify-content-evenly ">
         <div class="col-lg-6 box">
-          <div class="card b2 rounded-5">
-            <div class="card-body text">
-              <h1 class="no">5</h1>
-              <h3 class="pt-4">Pengunjung</h3>
+          <NuxtLink to="/pengunjung">
+            <div class="card b2 rounded-5">
+              <div class="card-body text">
+                <h3 class="pt-4">Pengunjung</h3>
+              </div>
             </div>
+          </NuxtLink>
           </div>
-        </div>
         <div class="col-lg-6 box">
           <div class="card b3 rounded-5">
             <div class="card-body text">
@@ -70,7 +71,7 @@ useHead({ title: "Home / PERPUSTAKAAN DIGITAL" })
   color: black;
 }
 .statistik {
-  color: rgba(181, 74, 74, 0.761);
+  color: rgb(181, 74, 74);
   margin-left: 50px;
 }
 .box{
@@ -81,6 +82,7 @@ useHead({ title: "Home / PERPUSTAKAAN DIGITAL" })
 }
 .b2{
   background-color: #ffd0d0f2;
+  color: rgba(0, 0, 0, 0.778);
 }
 .b3{
   background-color: rgba(181, 74, 74, 0.761);
