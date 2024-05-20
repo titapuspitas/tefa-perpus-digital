@@ -20,6 +20,7 @@
         </NuxtLink>
       </div>
     </div>
+
     <div class="statistik">
       <h1>STATISTIK</h1>
     </div>
@@ -28,18 +29,19 @@
           <NuxtLink to="/pengunjung">
             <div class="card b2 rounded-5">
               <div class="card-body text">
-                <h3 class="pt-4">Pengunjung</h3>
+                <h3 class="pt-4"><span class="no">{{jmlh_pengunjung}}</span>Pengunjung</h3>
               </div>
             </div>
           </NuxtLink>
           </div>
         <div class="col-lg-6 box">
-          <div class="card b3 rounded-5">
-            <div class="card-body text">
-              <h1 class="no">30</h1>
-              <h3 class="pt-4">Buku</h3>
+          <NuxtLink to="/buku">
+            <div class="card b3 rounded-5">
+              <div class="card-body text">
+                <h3 class="pt-4"><span class="no">{{jmlh_buku}}</span>Buku</h3>
+              </div>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
       <div class="container">
@@ -51,6 +53,29 @@
   </template>
 
 <script setup>
+const supabase = useSupabaseClient()
+const jmlh_pengunjung = ref(0)
+const jmlh_buku = ref(0)
+
+async function getjmlh_pengunjung(){
+  const{error, data, count} = await supabase
+  .from("pengunjung")
+  .select('*', {count: 'exact'})
+  if (count) jmlh_pengunjung.value = count
+}
+
+async function getjmlh_buku(){
+  const{error, data, count} = await supabase
+  .from("buku")
+  .select('*', {count: 'exact'})
+  if (count) jmlh_buku.value = count
+}
+
+onMounted(() => {
+  getjmlh_pengunjung()
+  getjmlh_buku()
+})
+
 useHead({ title: "Home / PERPUSTAKAAN DIGITAL" })
 </script>
 
@@ -86,6 +111,7 @@ useHead({ title: "Home / PERPUSTAKAAN DIGITAL" })
 }
 .b3{
   background-color: rgba(181, 74, 74, 0.761);
+  color: black;
 }
 .text{
   display: flex;
