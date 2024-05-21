@@ -23,7 +23,8 @@
   color: #ffffff;
 }
 .h-img >  img {
-  width: 80px;
+  width: 120px;
+  height: 120px;
   margin-left: 50px;
 }
 .t-judul{
