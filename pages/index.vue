@@ -1,5 +1,4 @@
 <template>
-  <html lang="en">
     <div class="container-fluid">
       <div class="row my-5 d-flex justify-content-evenly">
         <div class="col-lg-6 box">
@@ -57,7 +56,6 @@
         </div>
       </div>
     </div>
-    </html>
   </template>
 
 <script setup>
