@@ -1,4 +1,4 @@
-<template>
+<template lang="en">
   <div class="header">
     <div class="h-img">
       <img src="~/assets/img/logo-smkn4.png" alt="logo smkn 4">
