@@ -29,7 +29,7 @@
           <NuxtLink to="/pengunjung">
             <div class="card b2 rounded-5">
               <div class="card-body text">
-                <h4 class="pt-4"><span class="no">{{jmlh_pengunjung}}</span>Pengunjung</h4>
+                <h2 class="pt-4"><span class="no">{{jmlh_pengunjung}}</span>Pengunjung</h2>
               </div>
             </div>
           </NuxtLink>
@@ -38,7 +38,7 @@
           <NuxtLink to="/buku">
             <div class="card b3 rounded-5">
               <div class="card-body text">
-                <h4 class="pt-4"><span class="no">{{jmlh_buku}}</span>Buku</h4>
+                <h2 class="pt-4"><span class="no">{{jmlh_buku}}</span>Buku</h2>
               </div>
             </div>
           </NuxtLink>
