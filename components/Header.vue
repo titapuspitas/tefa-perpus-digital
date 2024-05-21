@@ -19,7 +19,7 @@
   height: 150px;
   display: flex;
   align-items: center;
-  background-color: #0075FF;
+  background-color: #0000FF;
   color: #ffffff;
 }
 .h-img >  img {
