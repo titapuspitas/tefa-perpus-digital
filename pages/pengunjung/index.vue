@@ -8,7 +8,7 @@
             <input v-model="keyword" type="search" class="form-control rounded-5" placeholder="Filter...">
           </form>
         </div>
-        <div class="my-3 text-muted">menampilkan 1 dari 1</div>
+        <div class="my-3 text-muted">menampilkan daftar pengunjung</div>
         <table class="table table-bordered">
           <thead>
             <tr>
