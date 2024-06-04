@@ -1,9 +1,9 @@
 import { NuxtLink } from '#build/components';
 <template>
-  <div class="container-fluid p-5">
+  <div class="container-fluid p-3">
     <div class="row">
       <div class="col-lg-12 -flex justify-content-around">
-        <div class="my-5">
+        <div class="my-4">
           <form @submit.prevent="getBuku">
             <input v-model="keyword" type="search" class="form-control rounded-5" placeholder="Mau baca apa hari ini?" />
           </form>
@@ -39,7 +39,7 @@ const getBuku = async () => {
   if (data) buku.value = data;
 };
 const getTotalBuku = async () => {
-  const { count, error } = await supabase.from("buku").select("*, kategori(*)", { count: 'exact', head: true });
+  const { count, error } = await supabase.from("buku").select("*, kategori(*)", { count: "exact", head: true });
   if (count) totalBuku.value = count;
 };
 
