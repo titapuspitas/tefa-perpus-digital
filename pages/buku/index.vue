@@ -54,7 +54,7 @@ const keyword = ref("");
 <style scoped>
 .card-body {
   width: 100%;
-  height: 400px;
+  height: 300px;
   padding: 0;
 }
 .cover {
