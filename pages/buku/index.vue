@@ -1,20 +1,24 @@
 import { NuxtLink } from '#build/components';
 <template>
-  <div class="container-fluid p-3">
+  <div class="container-fluid p-5">
     <div class="row">
       <div class="col-lg-12 -flex justify-content-around">
-        <div class="my-4">
+        <div class="my-5">
           <form @submit.prevent="getBuku">
-            <input v-model="keyword" type="search" class="form-control rounded-5" placeholder="Mau baca apa hari ini?" />
+            <input 
+            v-model="keyword" 
+            type="search" 
+            class="form-control rounded-5" 
+            placeholder="Mau baca apa hari ini?">
           </form>
         </div>
-        <div class="my-4 text-muted">menampilkan {{ buku?.length }} dari {{ totalBuku }}</div>
+        <div class="my-4 text-muted">menampilkan 30 dari 30</div>
         <div class="row justify-content-evenly">
-          <div v-for="(buku, i) in buku" :key="i" class="col-lg-2">
+          <div v-for="(buku,i) in buku" :key="i" class="col-lg-2">
             <NuxtLink :to="`/buku/${buku.id}`">
-              <div class="card mb-3">
+              <div class="card mb-5 shadow-lg">
                 <div class="card-body">
-                  <img :src="buku.cover" class="cover" :alt="buku.judul" />
+                  <img :src="buku.cover" class="cover" :alt="buku.judul">
                 </div>
               </div>
             </NuxtLink>
@@ -29,32 +33,39 @@ import { NuxtLink } from '#build/components';
 </template>
 
 <script setup>
-const supabase = useSupabaseClient();
+const supabase = useSupabaseClient()
 
-const buku = ref([]);
-const totalBuku = ref(0);
+const buku = ref([])
 
 const getBuku = async () => {
-  const { data, error } = await supabase.from("buku").select("*, kategori(*)").ilike("judul", `%${keyword.value}%`);
-  if (data) buku.value = data;
-};
-const getTotalBuku = async () => {
-  const { count, error } = await supabase.from("buku").select("*, kategori(*)", { count: "exact", head: true });
-  if (count) totalBuku.value = count;
-};
+  const { data, error } = await supabase
+  .from('buku')
+  .select('*, kategori(*)')
+  .ilike("judul", `%${keyword.value}%`);
+  if(data) buku.value = data;
+}
 
 onMounted(() => {
-  getBuku();
-  getTotalBuku();
+  getBuku()
 });
 
 const keyword = ref("");
 </script>
 
 <style scoped>
-.card-body {
+.shadow-lg {
+  box-shadow: 6px 4px 0 #2e2e2eae !important;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 20px #2e2e2eae !important;
+}
+.card {
+  transition: all .2s ease-in-out;
+}
+.card-body{
   width: 100%;
-  height: 300px;
+  height: 400px;
   padding: 0;
 }
 .cover {
@@ -63,10 +74,10 @@ const keyword = ref("");
   object-fit: cover;
   object-position: 0 30;
 }
-.btn {
+.btn{
   background-color: #ffd0d0f2;
 }
-.form-control {
+.form-control{
   background-color: #ffd0d0f2;
 }
 </style>

@@ -1,12 +1,16 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <h2 class="text-start my-4">{{ buku.judul }}</h2>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="card">
           <div class="card-body">
-            <span v-if="buku.cover"><img :src="buku.cover" :alt="buku.judul" class="cover" /></span>
-            <span v-else> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png" :alt="buku.judul" class="cover" /></span>
+            <span v-if="buku.cover"><img :src="buku.cover" :alt="buku.judul" class="cover"></span>
+            <span v-else>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
+                :alt="buku.judul"
+                class="cover"></span>
           </div>
         </div>
       </div>
@@ -27,18 +31,19 @@
 </template>
 
 <script setup>
-const supabase = useSupabaseClient();
-const route = useRoute();
-const buku = ref([]);
+const supabase = useSupabaseClient()
+const route = useRoute()
+const buku = ref([])
 
 const getBukuById = async () => {
-  const { data, error } = await supabase.from("buku").select(`*, kategori(*)`).eq("id", route.params.id);
-  if (data) buku.value = data[0];
-};
+  const { data, error } = await supabase.from('buku').select(`*, kategori(*)`)
+    .eq('id', route.params.id)
+  if (data) buku.value = data[0]
+}
 
 onMounted(() => {
-  getBukuById();
-});
+  getBukuById()
+})
 </script>
 
 <style scoped>
@@ -51,12 +56,5 @@ onMounted(() => {
 
 .cover {
   width: 100%;
-}
-
-.card-body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-
 }
 </style>
