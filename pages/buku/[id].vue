@@ -20,7 +20,7 @@
           <li class="list-group-item">tahun_terbit : {{ buku.tahun_terbit }}</li>
           <li class="list-group-item">penerbit : {{ buku.penerbit }}</li>
           <li class="list-group-item">rak : {{ buku.rak }}</li>
-          <li class="list-group-item">deskripsi : {{ buku.deskripsi }}</li>
+          <li class="list-group-item rapi">deskripsi : {{ buku.deskripsi }}</li>
         </ul>
       </div>
     </div>
@@ -56,5 +56,9 @@ onMounted(() => {
 
 .cover {
   width: 100%;
+}
+
+.rapi{
+  text-align: justify;
 }
 </style>
